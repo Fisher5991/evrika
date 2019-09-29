@@ -1,0 +1,11 @@
+/*
+.DS_Store
+!/build
+!/src
+!/package.json
+!/package-lock.json
+!/gulpfile.js
+!/readme.md
+!/.gitignore
+!/.gitattributes
+!/.editorconfig

@@ -1,0 +1,31 @@
+{
+  "name": "evrika",
+  "version": "1.0.0",
+  "description": "Тестовое задание для Эврика",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp dev"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "author": "Khadis Asfyandiyarov",
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "del": "5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "7.0.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-imagemin": "6.1.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-posthtml": "3.0.4",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "2.6.5",
+    "gulp-svgstore": "7.0.1",
+    "gulp-uglify": "3.0.2",
+    "posthtml-include": "1.2.0"
+  }
+}
