@@ -1,0 +1,14 @@
+.search__label {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  text-transform: uppercase;
+}
+
+.search__button-icon {
+  fill: $brown;
+
+  &:hover,
+  &:focus {
+    fill: $light-brown;
+  }
+}

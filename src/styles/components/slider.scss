@@ -1,0 +1,23 @@
+.slider__list {
+  @include list-reset;
+}
+
+.slider__dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid $brown;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $light-brown;
+  }
+
+  &--active {
+    background-color: $brown;
+
+    &:hover,
+    &:focus {
+      background-color: $light-brown;
+    }
+  }
+}

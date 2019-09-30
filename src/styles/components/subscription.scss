@@ -1,0 +1,37 @@
+.subscription__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: calc(24 / 18);
+  letter-spacing: calc(100 / 1000);
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+.subscription__label {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: white;
+  text-transform: uppercase;
+}
+
+.subscription__submit {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: $brown;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: $light-brown;
+  }
+}
+
+.subscription__social-link {
+  font-weight: 700;
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: white;
+  text-transform: uppercase;
+}

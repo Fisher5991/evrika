@@ -1,0 +1,27 @@
+.product__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: calc(25 / 1000);
+  text-transform: uppercase;
+}
+
+.product__more-link {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: $brown;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: $light-brown;
+  }
+}
+
+.product__price {
+  font-size: 13px;
+  line-height: calc(24 / 13);
+  letter-spacing: calc(25 / 1000);
+}

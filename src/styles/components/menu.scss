@@ -1,0 +1,43 @@
+.menu__list {
+  @include list-reset;
+}
+
+.menu__item {
+  &--special {
+    background-color: $pink;
+    text-transform: uppercase;
+  }
+
+  &:focus-within .menu__sub-list {
+    display: block;
+  }
+}
+
+.menu__link {
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  letter-spacing: calc(25 / 1000);
+  color: white;
+
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
+
+  &:hover + .menu__sub-list {
+    display: block;
+  }
+}
+
+.menu__sub-list {
+  @include list-reset;
+  border-top: 4px solid $brown;
+  background-color: white;
+  box-shadow: 17px 29.445px 49px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu__sub-link {
+  font-size: 16px;
+  line-height: calc(36 / 16);
+  letter-spacing: calc(25 / 1000);
+}

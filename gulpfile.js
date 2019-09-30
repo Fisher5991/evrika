@@ -4,14 +4,15 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCSS = require('gulp-clean-css'),
+    autoprefixer = require('autoprefixer'),
+    cleanCss = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     del = require('del'),
     svgstore = require('gulp-svgstore'),
     posthtml = require('gulp-posthtml'),
-    include = require('posthtml-include');
+    include = require('posthtml-include'),
+    postcss = require('gulp-postcss');
 
 var path = {
   src: {
@@ -20,7 +21,7 @@ var path = {
     scripts: 'src/scripts/*.js',
     images: 'src/images/**/*.*',
     fonts: 'src/fonts/**/*.*',
-    svg: 'src/images/svg/'
+    sprite: 'src/images/**/icon-*.svg'
   },
 
   build: {
@@ -60,12 +61,11 @@ gulp.task('styles:build', function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(autoprefixer({
-      remove: true,
-      cascade: false
-    }))
+    .pipe(postcss([
+      autoprefixer()
+    ]))
     .pipe(gulp.dest(path.build.styles))
-    .pipe(cleanCSS())
+    .pipe(cleanCss())
     .pipe(rename(function (path) {
       path.basename += '.min'
     }))
@@ -103,12 +103,12 @@ gulp.task('imagemin:build', function () {
 })
 
 gulp.task('sprite:build', function () {
-  return gulp.src(path.src.images + 'icon-*.svg')
+  return gulp.src(path.src.sprite)
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('path.build.images'));
+    .pipe(gulp.dest(path.build.images));
 });
 
 gulp.task('copy:build', function () {
@@ -125,10 +125,10 @@ gulp.task('serve', function () {
     ui: false
   });
 
-  gulp.watch(path.src.styles);
-  gulp.watch(path.src.scripts);
-  gulp.watch(path.src.html);
+  gulp.watch(path.watch.styles, gulp.series('styles:build'));
+  gulp.watch(path.watch.scripts, gulp.series('scripts:build'));
+  gulp.watch(path.watch.html, gulp.series('html:build'));
 });
 
-gulp.task('build', gulp.series('clean:build', gulp.parallel('html:build', 'styles:build', 'scripts:build', 'copy:build', 'sprite:build')));
+gulp.task('build', gulp.series('clean:build', 'sprite:build', gulp.parallel('html:build', 'styles:build', 'scripts:build', 'copy:build')));
 gulp.task('dev', gulp.series('build', 'serve'));

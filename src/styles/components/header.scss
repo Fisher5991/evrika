@@ -1,0 +1,48 @@
+.header__nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+
+  &--menu {
+    max-width: 61.11%;
+  }
+
+  &--user {
+    max-width: 22.917%;
+  }
+}
+
+.header__contacts-list {
+  @include list-reset;
+}
+
+.header__contacts-link {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
+}
+
+.header__basket-link {
+  background-color: $brown;
+
+  &:hover,
+  &:focus {
+    background-color: $light-brown;
+  }
+}
+
+.header__bottom {
+  background-color: $main;
+}

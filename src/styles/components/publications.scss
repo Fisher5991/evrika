@@ -1,0 +1,35 @@
+.publications__item-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(36 / 16);
+  letter-spacing: calc(20 / 1000);
+  text-transform: uppercase;
+}
+
+.publications__date {
+  font-size: 13px;
+  line-height: calc(24 / 13);
+  letter-spacing: calc(25 / 1000);
+  color: $brown;
+}
+
+.publications__item-description {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: calc(21 / 14);
+  letter-spacing: calc(25 / 1000);
+}
+
+.publications__link-more {
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: $brown;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: $light-brown;
+  }
+}

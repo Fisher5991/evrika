@@ -1,0 +1,14 @@
+.nav__list {
+  @include list-reset;
+}
+
+.nav__link {
+  font-size: 13px;
+  line-height: calc(24 / 13);
+  letter-spacing: calc(25 / 1000);
+
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
+}

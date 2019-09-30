@@ -1,0 +1,17 @@
+.brands__all-link {
+  font-weight: 700;
+  line-height: calc(24 / 14);
+  letter-spacing: calc(100 / 1000);
+  color: $brown;
+
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
+}
+
+.brands__others-item {
+  font-size: 16px;
+  line-height: calc(36 / 16);
+  letter-spacing: calc(25 / 1000);
+}

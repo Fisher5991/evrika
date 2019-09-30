@@ -1,0 +1,8 @@
+.advantages__list {
+  @include list-reset;
+}
+
+.advantages__item {
+  letter-spacing: calc(100 / 1000);
+  text-transform: uppercase;
+}

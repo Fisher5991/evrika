@@ -1,0 +1,17 @@
+@mixin tablet-max {
+  @media (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin mobile-max {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
