@@ -1,18 +1,88 @@
+.slider {
+  &.swiper-container {
+    position: static;
+  }
+}
+
 .slider__list {
   @include list-reset;
+}
+
+.slider__item {
+  box-sizing: border-box;
+}
+
+.main__slider {
+  .slider__item {
+    position: relative;
+    width: auto;
+    height: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -1px;
+      width: 1px;
+      height: calc(100% - 8px);
+      background-color: $gray-border;
+    }
+  }
+
+  .slider__button {
+    top: 218px;
+  }
+}
+
+.brands__slider {
+  .slider__button {
+    top: 128px;
+  }
+}
+
+.slider__button {
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-88%);
+  cursor: pointer;
+
+  &--prev {
+    left: -10px;
+  }
+
+  &--next {
+    right: -10px;
+  }
+
+  &.swiper-button-disabled .slider__arrow-icon {
+    fill: $gray-border;
+  }
+
+  &:hover:not(.swiper-button-disabled) .slider__arrow-icon {
+    fill: $light-brown;
+  }
+}
+
+.slider__pagination {
+  left: 20.9% !important;
+  bottom: 36px !important;
+  width: auto !important;
 }
 
 .slider__dot {
   width: 10px;
   height: 10px;
   border: 2px solid $brown;
+  margin: 0 31px 0 0 !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
 
   &:hover,
   &:focus {
     border: 2px solid $light-brown;
   }
 
-  &--active {
+  &.swiper-pagination-bullet-active {
     background-color: $brown;
 
     &:hover,
@@ -20,4 +90,10 @@
       background-color: $light-brown;
     }
   }
+}
+
+.slider__arrow-icon {
+  display: block;
+  transition: fill 0.3s;
+  fill: $brown;
 }

@@ -1,11 +1,24 @@
 .menu__list {
   @include list-reset;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-left: -31px;
 }
 
 .menu__item {
+  position: relative;
+
   &--special {
+    flex-grow: 1;
+    margin-left: 16px;
+    max-width: 162px;
     background-color: $pink;
     text-transform: uppercase;
+
+    .menu__link {
+      padding-left: 52px;
+    }
   }
 
   &:focus-within .menu__sub-list {
@@ -14,9 +27,14 @@
 }
 
 .menu__link {
+  display: block;
+  padding-top: 19px;
+  padding-left: 31px;
+  padding-right: 25px;
+  padding-bottom: 17px;
   font-size: 16px;
-  line-height: calc(24 / 16);
-  letter-spacing: calc(25 / 1000);
+  line-height: (24 / 16);
+  letter-spacing: (25 / 1000) + em;
   color: white;
 
   &:hover,
@@ -31,13 +49,39 @@
 
 .menu__sub-list {
   @include list-reset;
+  position: absolute;
+  z-index: 10;
+  top: calc(100% - 2px);
+  width: 100vw;
+  max-width: 255px;
+  display: none;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 17px;
+  padding-left: 28px;
   border-top: 4px solid $brown;
   background-color: white;
   box-shadow: 17px 29.445px 49px 0px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    display: block;
+  }
+}
+
+.menu__sub-item {
+  display: block;
 }
 
 .menu__sub-link {
+  display: block;
+  padding-top: 9px;
+  padding-bottom: 9px;
   font-size: 16px;
-  line-height: calc(36 / 16);
-  letter-spacing: calc(25 / 1000);
+  line-height: (18 / 16);
+  letter-spacing: (25 / 1000) + em;
+
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
 }

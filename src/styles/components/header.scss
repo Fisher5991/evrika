@@ -1,6 +1,9 @@
+.header__top {
+  border-bottom: 1px solid $gray-border;
+}
+
 .header__nav {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -10,23 +13,79 @@
   flex-shrink: 0;
 
   &--menu {
-    max-width: 61.11%;
+    max-width: 66.0737%;
   }
 
   &--user {
-    max-width: 22.917%;
+    max-width: 25%;
   }
+}
+
+.header__info {
+  width: 100%;
+  min-width: 400px;
+  margin-right: 4.5123%;
+  padding-top: 11px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  margin-right: 7.6688%;
+}
+
+.header__image {
+  display: block;
+}
+
+.header__search {
+  max-width: 800px;
+  margin-bottom: 28px;
 }
 
 .header__contacts-list {
   @include list-reset;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-left: -54px;
+}
+
+.header__contacts-item {
+  margin-bottom: 6px;
+  margin-left: 53px;
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  &--email {
+    padding-left: 31px;
+    background-size: 14px 11px;
+    background-image: url("../images/mail.svg");
+  }
+
+  &--schedule {
+    padding-left: 30px;
+    background-size: 14px 14px;
+    background-image: url("../images/schedule.svg");
+  }
+
+  &--callback {
+    padding-left: 25px;
+    background-size: 9px 11px;
+    background-image: url("../images/tel.svg");
+  }
+
+  &--tel {
+    margin-top: 1px;
+  }
 }
 
 .header__contacts-link {
-  line-height: calc(24 / 14);
-  letter-spacing: calc(100 / 1000);
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-size: 14px;
+  line-height: (24 / 14);
+  letter-spacing: (100 / 1000) + em;
+  font-variant: small-caps;
 
   &:hover,
   &:focus {
@@ -34,7 +93,31 @@
   }
 }
 
+.header__contacts-time {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: (100 / 1000) + em;
+}
+
+.header__basket {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 2px;
+  margin-left: auto;
+  margin-top: 17px;
+}
+
+.header__basket-icon {
+  margin-bottom: 5px;
+  fill: white;
+}
+
 .header__basket-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 84px;
   background-color: $brown;
 
   &:hover,
@@ -43,6 +126,26 @@
   }
 }
 
+.header__basket-counter {
+  top: 8px;
+  right: 5px;
+}
+
+.header__middle {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10px;
+  padding-bottom: 19px;
+}
+
+.header__contacts {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 804px;
+}
+
 .header__bottom {
+  padding-left: 68px;
   background-color: $main;
 }

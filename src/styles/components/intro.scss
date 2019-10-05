@@ -1,15 +1,55 @@
+.intro {
+  margin-bottom: 64px;
+  padding-top: 63px;
+  overflow-x: hidden;
+}
+
+.intro__wrapper {
+  position: relative;
+}
+
+.intro__slider {
+  position: relative;
+}
+
+.intro__slider-item {
+  height: 487px;
+}
+
 .intro__recommendations {
+  position: absolute;
+  z-index: 5;
+  top: -20px;
+  right: -18px;
+  width: 330px;
+  padding-top: 36px;
+  padding-right: 47px;
+  padding-bottom: 43px;
+  padding-left: 47px;
   background-color: $gray;
   box-shadow: -32.453px 28.211px 54px 0px rgba(36, 25, 5, 0.05);
 }
 
 .intro__recommendation-title {
+  position: relative;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 66px;
   font-size: 20px;
-  letter-spacing: calc(25 / 1000);
+  letter-spacing: (15 / 1000) + em;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-variant: small-caps;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100vw;
+    max-width: 332px;
+    height: 2px;
+    background-color: $brown;
+  }
 }
 
 .intro__recommendations-list {
@@ -18,8 +58,8 @@
 
 .intro__recommendations-item {
   font-size: 16px;
-  line-height: calc(36 / 16);
-  letter-spacing: calc(25 / 1000);
+  line-height: (36 / 16);
+  letter-spacing: (25 / 1000) + em;
 }
 
 .intro__recommendations-link {

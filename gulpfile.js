@@ -12,16 +12,23 @@ var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     posthtml = require('gulp-posthtml'),
     include = require('posthtml-include'),
-    postcss = require('gulp-postcss');
+    postcss = require('gulp-postcss'),
+    concat = require('gulp-concat');
+
+var jsFiles = [
+  'src/scripts/slider.js',
+  'src/scripts/input.js'
+]
 
 var path = {
   src: {
     html: 'src/*.html',
     styles: 'src/styles/*.scss',
-    scripts: 'src/scripts/*.js',
+    scripts: jsFiles,
     images: 'src/images/**/*.*',
     fonts: 'src/fonts/**/*.*',
-    sprite: 'src/images/**/icon-*.svg'
+    sprite: 'src/images/**/icon-*.svg',
+    libs: 'src/libs/**/*.*'
   },
 
   build: {
@@ -78,6 +85,7 @@ gulp.task('scripts:build', function () {
   return gulp.src(path.src.scripts)
     .pipe(plumber())
     .pipe(sourcemaps.init())
+    .pipe(concat('scripts.js'))
     .pipe(gulp.dest(path.build.scripts))
     .pipe(uglify())
     .pipe(rename(function (path) {
@@ -112,7 +120,7 @@ gulp.task('sprite:build', function () {
 });
 
 gulp.task('copy:build', function () {
-  return gulp.src([path.src.images, path.src.fonts], {base: 'src'})
+  return gulp.src([path.src.images, path.src.fonts, path.src.libs], {base: 'src'})
     .pipe(gulp.dest('build'));
 })
 
@@ -125,9 +133,9 @@ gulp.task('serve', function () {
     ui: false
   });
 
-  gulp.watch(path.watch.styles, gulp.series('styles:build'));
-  gulp.watch(path.watch.scripts, gulp.series('scripts:build'));
-  gulp.watch(path.watch.html, gulp.series('html:build'));
+  gulp.watch(path.watch.styles, {usePolling: true}, gulp.series('styles:build'));
+  gulp.watch(path.watch.scripts, {usePolling: true}, gulp.series('scripts:build'));
+  gulp.watch(path.watch.html, {usePolling: true}, gulp.series('html:build'));
 });
 
 gulp.task('build', gulp.series('clean:build', 'sprite:build', gulp.parallel('html:build', 'styles:build', 'scripts:build', 'copy:build')));

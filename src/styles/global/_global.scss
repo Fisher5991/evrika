@@ -1,6 +1,6 @@
 html,
 body {
-  min-width: 320px;
+  min-width: 1440px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 img {
@@ -55,4 +55,9 @@ img {
   padding-left: 68px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.container--larger {
+  padding-right: 61px;
+  padding-left: 60px;
 }

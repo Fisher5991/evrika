@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.min.css">
   </head>
   <body class="page">
-    <div style="display: none">
+    <div class="visually-hidden">
       <include src="build/images/sprite.svg"></include>
     </div>
 
@@ -42,35 +42,37 @@
             <li class="nav__item">
               <a class="nav__link" href="#">Личный кабинет</a>
             </li>
-            <li class="nav__item">
+            <li class="nav__item nav__item--favorites">
               <a class="nav__link link link--counter" href="#">
                 <span>Избранное</span>
-                <span class="link__counter">2</span>
+                <span class="nav__link-counter link__counter">2</span>
               </a>
             </li>
           </ul>
         </nav>
       </div>
-      <div class="header__middle">
-        <div class="header__logo">
+      <div class="header__middle container">
+        <a class="header__logo">
           <img class="header__image" src="images/logo.svg" alt="Логотип Lenoma" width="201" height="113">
-        </div>
+        </a>
         <div class="header__info">
           <div class="header__search search">
             <form class="header__search-form search__form form" action="#" method="get">
-              <input class="search__input form__input" type="text" name="search" id="header-search">
-              <label class="search__label form__label" for="header-search">Поиск по каталогу товаров</label>
-              <button class="search__button button" type="submit">
-                <svg class="search__button-icon" width="14" height="14">
-                  <use xlink:href="#icon-search"></use>
-                </svg>
-              </button>
+              <div class="search__field-wrapper">
+                <input class="search__input form__input" type="text" name="search" id="header-search">
+                <label class="search__label form__label" for="header-search">Поиск по каталогу товаров</label>
+                <button class="search__button button" type="submit">
+                  <svg class="search__button-icon" width="14" height="14">
+                    <use xlink:href="#icon-search"></use>
+                  </svg>
+                </button>
+              </div>
             </form>
           </div>
           <div class="header__contacts">
             <ul class="header__contacts-list">
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="tel:+74955420595">+7&nbsp;&#47;495&#47;&nbsp;542&#150;05&#150;95</a>
+              <li class="header__contacts-item header__contacts-item--tel">
+                <a class="header__contacts-link" href="tel:+74955420595">+7&nbsp;&#47;495&#47;&nbsp;542-05-95</a>
               </li>
               <li class="header__contacts-item header__contacts-item--callback">
                 <a class="header__contacts-link" href="#">Обратный звонок</a>
@@ -79,7 +81,7 @@
                 <a class="header__contacts-link" href="mailto:info@lenoma.ru">info@lenoma.ru</a>
               </li>
               <li class="header__contacts-item header__contacts-item--schedule">
-                <a class="header__contacts-link" href="#">пн&mdash;пт 9.00&mdash;21.00</a>
+                <a class="header__contacts-link" href="#">пн&mdash;пт <span class="header__contacts-time">9.00&mdash;21.00</span></a>
               </li>
             </ul>
           </div>
@@ -89,7 +91,7 @@
             <svg class="header__basket-icon" width="32" height="41">
               <use xlink:href="#icon-basket"></use>
             </svg>
-            <span class="link__counter">4</span>
+            <span class="header__basket-counter link__counter">4</span>
           </a>
         </div>
       </div>
@@ -144,89 +146,69 @@
     </header>
     <main class="main">
       <h1 class="visually-hidden">Магазин парфюмерии и косметики</h1>
-      <section class="intro">
+      <section class="intro container">
         <h2 class="visually-hidden">Случайные товары</h2>
-        <div class="intro__slider slider">
-          <ul class="intro__slider-list slider__list">
-            <div class="intro__recommendations">
-              <h3 class="intro__recommendation-title">Наши рекомендации</h3>
-              <ul class="intro__recommendations-list">
-                <li class="intro__recommendations-item">
-                  <a class="intro__recommendations-link" href="#">Интересные предложения</a>
-                </li>
-                <li class="intro__recommendations-item">
-                  <a class="intro__recommendations-link" href="#">Женская парфюмерия</a>
-                </li>
-                <li class="intro__recommendations-item">
-                  <a class="intro__recommendations-link" href="#">Товар со скидками</a>
-                </li>
-              </ul>
-            </div>
-            <li class="intro__slider-item slider__item">
-              <article class="product">
-                <h1 class="product__title">Идеальный аромат от Giorgio Armani</h1>
-                <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
-                <div class="product__more">
-                  <a class="product__more-link" href="#">
-                    Подробнее
-                  </a>
-                </div>
-                <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
-              </article>
-            </li>
-            <li class="intro__slider-item slider__item">
-              <article class="product">
-                <h1 class="product__title">Tease Limited Edition Eau de Parfum</h1>
-                <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
-                <div class="product__more">
-                  <a class="product__more-link" href="#">
-                    Подробнее
-                  </a>
-                </div>
-                <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
-              </article>
-            </li>
-            <li class="intro__slider-item slider__item">
-              <article class="product">
-                <h1 class="product__title">10 Corso Como</h1>
-                <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
-                <div class="product__more">
-                  <a class="product__more-link" href="#">
-                    Подробнее
-                  </a>
-                </div>
-                <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
-              </article>
-            </li>
-            <li class="intro__slider-item slider__item">
-              <article class="product">
-                <h1 class="product__title">1881 Collection</h1>
-                <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
-                <div class="product__more">
-                  <a class="product__more-link" href="#">
-                    Подробнее
-                  </a>
-                </div>
-                <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
-              </article>
-            </li>
-          </ul>
-          <div class="slider__nav">
-            <div class="slider__dots">
-              <button class="slider__dot button" type="button">
-                <span class="visually-hidden">Переход к слайду</span>
-              </button>
-              <button class="slider__dot button" type="button">
-                <span class="visually-hidden">Переход к слайду</span>
-              </button>
-              <button class="slider__dot button" type="button">
-                <span class="visually-hidden">Переход к слайду</span>
-              </button>
+        <div class="intro__wrapper">
+          <div class="intro__recommendations">
+            <h3 class="intro__recommendation-title">Наши рекомендации</h3>
+            <ul class="intro__recommendations-list">
+              <li class="intro__recommendations-item">
+                <a class="intro__recommendations-link" href="#">Интересные предложения</a>
+              </li>
+              <li class="intro__recommendations-item">
+                <a class="intro__recommendations-link" href="#">Женская парфюмерия</a>
+              </li>
+              <li class="intro__recommendations-item">
+                <a class="intro__recommendations-link" href="#">Товар со скидками</a>
+              </li>
+            </ul>
+          </div>
+          <div class="intro__slider slider swiper-container">
+            <ul class="intro__slider-list slider__list swiper-wrapper">
+              <li class="intro__slider-item slider__item swiper-slide">
+                <article class="product">
+                  <h1 class="product__title">Идеальный аромат от Giorgio Armani</h1>
+                  <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
+                  <div class="product__more">
+                    <a class="product__more-link" href="#">
+                      Подробнее
+                    </a>
+                  </div>
+                  <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
+                </article>
+              </li>
+              <li class="intro__slider-item slider__item swiper-slide">
+                <article class="product">
+                  <h1 class="product__title">Tease Limited Edition Eau de Parfum</h1>
+                  <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
+                  <div class="product__more">
+                    <a class="product__more-link" href="#">
+                      Подробнее
+                    </a>
+                  </div>
+                  <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
+                </article>
+              </li>
+              <li class="intro__slider-item slider__item swiper-slide">
+                <article class="product">
+                  <h1 class="product__title">10 Corso Como</h1>
+                  <img class="product__image" src="images/intro.jpg" srcset="images/intro@2x.jpg 2x" alt="Фото продукта">
+                  <div class="product__more">
+                    <a class="product__more-link" href="#">
+                      Подробнее
+                    </a>
+                  </div>
+                  <p class="product__price">от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;</p>
+                </article>
+              </li>
+            </ul>
+            <div class="slider__pagination swiper-pagination">
+
             </div>
           </div>
         </div>
       </section>
-      <section class="advantages">
+      <section class="advantages container">
         <h2 class="visually-hidden">Преимущества</h2>
         <ul class="advantages__list">
           <li class="advantages__item">
@@ -243,385 +225,381 @@
           </li>
         </ul>
       </section>
-      <section class="bestsellers">
+      <section class="main__bestsellers bestsellers container container--larger">
         <h2 class="main__title bestsellers__title">Хиты продаж</h2>
-        <div class="bestsellers__slider slider">
-          <ul class="slider__list">
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-1.jpg" srcset="images/bestseller-1@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Fleur Narcotique</a>
-                </h1>
-                <span class="product-card__mark">Sale</span>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <del class="product-card__old-price" datetime="2015-05-07">
-                    от 8&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </del>
-                  <p class="product-card__price">
-                    от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">100% love</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-3.jpg" srcset="images/bestseller-3@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">10 Corso Como</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 7&nbsp;890&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-4.jpg" srcset="images/bestseller-4@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">1881 Collection</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 3&nbsp;270&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">100% Love</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-          </ul>
-          <div class="slider__nav">
-            <div class="slider__arrows">
-              <button class="slider__button slider__button--prev button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-prev"></use>
-                </svg>
-                <span class="visually-hidden">Назад</span>
-              </button>
-              <button class="slider__button slider__button--next button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-next"></use>
-                </svg>
-                <span class="visually-hidden">Вперёд</span>
-              </button>
-            </div>
+        <div class="main__slider-wrapper">
+          <div class="main__slider swiper-container bestsellers__slider slider">
+            <ul class="slider__list swiper-wrapper">
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-1.jpg" srcset="images/bestseller-1@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Fleur Narcotique</a>
+                  </h1>
+                  <span class="product-card__mark">Sale</span>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <del class="product-card__old-price" datetime="2015-05-07">
+                      &nbsp;&nbsp;8&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </del>
+                    <p class="product-card__price">
+                      от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">100% love</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-3.jpg" srcset="images/bestseller-3@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">10 Corso Como</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 7&nbsp;890&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-4.jpg" srcset="images/bestseller-4@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">1881 Collection</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 3&nbsp;270&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">100% Love</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <button class="slider__button slider__button--prev button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-prev"></use>
+              </svg>
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="slider__button slider__button--next button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-next"></use>
+              </svg>
+              <span class="visually-hidden">Вперёд</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="novelty">
+      <section class="main__novelty novelty container container--larger">
         <h2 class="main__title novelty__title">Новинки</h2>
-        <div class="novelty__slider slider">
-          <ul class="slider__list">
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/novelty-1.jpg" srcset="images/novelty-1@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Aigner Black</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 6&nbsp;780&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/novelty-2.jpg" srcset="images/novelty-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Aigner Black Icedrop</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/novelty-3.jpg" srcset="images/novelty-3@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Fleur Narcotique</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/novelty-4.jpg" srcset="images/novelty-4@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Aire Loco</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 3&nbsp;910&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">100% Love</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-          </ul>
-          <div class="slider__nav">
-            <div class="slider__arrows">
-              <button class="slider__button slider__button--prev button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-prev"></use>
-                </svg>
-                <span class="visually-hidden">Назад</span>
-              </button>
-              <button class="slider__button slider__button--next button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-next"></use>
-                </svg>
-                <span class="visually-hidden">Вперёд</span>
-              </button>
-            </div>
+        <div class="main__slider-wrapper">
+          <div class="main__slider swiper-container novelty__slider slider">
+            <ul class="slider__list swiper-wrapper">
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/novelty-1.jpg" srcset="images/novelty-1@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Aigner Black</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 6&nbsp;780&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/novelty-2.jpg" srcset="images/novelty-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Aigner Black Icedrops</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/novelty-3.jpg" srcset="images/novelty-3@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Fleur Narcotique</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/novelty-4.jpg" srcset="images/novelty-4@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Aire Loco</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 3&nbsp;910&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">100% Love</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <button class="slider__button slider__button--prev button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-prev"></use>
+              </svg>
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="slider__button slider__button--next button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-next"></use>
+              </svg>
+              <span class="visually-hidden">Вперёд</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="special-offers">
-        <h2 class="main__title special-offers__title">Специальные предложения</h2>
-        <div class="special-offers__slider slider">
-          <ul class="slider__list">
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/offer-1.jpg" srcset="images/offer-1@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">8 Always Pretty</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/offer-2.jpg" srcset="images/offer-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Fan di Fendi Extreme</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/offer-3.jpg" srcset="images/offer-3@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">Tease Limited Edition Eau de Parfum</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 3&nbsp;910&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/offer-4.jpg" srcset="images/offer-4@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">001</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-            <li class="slider__item">
-              <article class="product-card">
-                <div class="product-card__image-wrapper">
-                  <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
-                </div>
-                <h1 class="product-card__title">
-                  <a class="product-card__link" href="#">100% Love</a>
-                </h1>
-                <div class="product-card__info">
-                  <p class="product-card__text product-card__text--company">EX Nihilo</p>
-                  <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
-                  <p class="product-card__text product-card__text--gender">Женская</p>
-                </div>
-                <div class="product-card__cost">
-                  <p class="product-card__price">
-                    от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
-                  </p>
-                </div>
-              </article>
-            </li>
-          </ul>
-          <div class="slider__nav">
-            <div class="slider__arrows">
-              <button class="slider__button slider__button--prev button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-prev"></use>
-                </svg>
-                <span class="visually-hidden">Назад</span>
-              </button>
-              <button class="slider__button slider__button--next button" type="button">
-                <svg class="slider__arrow-icon" width="19" height="32">
-                  <use xlink:href="#icon-arrow-next"></use>
-                </svg>
-                <span class="visually-hidden">Вперёд</span>
-              </button>
-            </div>
+      <section class="main__special-offers special-offers container container--larger">
+        <h2 class="main__title main__title--special-offers special-offers__title">Специальные предложения</h2>
+        <div class="main__slider-wrapper">
+          <div class="main__slider swiper-container special-offers__slider slider">
+            <ul class="slider__list swiper-wrapper">
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/offer-1.jpg" srcset="images/offer-1@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">8 Always Pretty</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/offer-2.jpg" srcset="images/offer-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Fan di Fendi Extreme</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/offer-3.jpg" srcset="images/offer-3@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">Tease Limited Edition Eau de Parfum</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 3&nbsp;910&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/offer-4.jpg" srcset="images/offer-4@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">001</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 4&nbsp;990&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+              <li class="slider__item swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <img class="product-card__image" src="images/bestseller-2.jpg" srcset="images/bestseller-2@2x.jpg 2x" alt="Фото продукта">
+                  </div>
+                  <h1 class="product-card__title">
+                    <a class="product-card__link" href="#">100% Love</a>
+                  </h1>
+                  <div class="product-card__info">
+                    <p class="product-card__text product-card__text--company">EX Nihilo</p>
+                    <p class="product-card__text product-card__text--type">Парфюмированная вода</p>
+                    <p class="product-card__text product-card__text--gender">Женская</p>
+                  </div>
+                  <div class="product-card__cost">
+                    <p class="product-card__price">
+                      от 2&nbsp;390&nbsp;Р.&nbsp;&mdash;
+                    </p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <button class="slider__button slider__button--prev button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-prev"></use>
+              </svg>
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <button class="slider__button slider__button--next button" type="button">
+              <svg class="slider__arrow-icon" width="19" height="32">
+                <use xlink:href="#icon-arrow-next"></use>
+              </svg>
+              <span class="visually-hidden">Вперёд</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="brands">
+      <section class="main__brands brands container container--larger">
         <h2 class="main__title brands__title">Топ брендов</h2>
-        <a class="brands__all-link" href="#">Все бренды</a>
+        <div class="brands__link-wrapper">
+          <a class="brands__all-link" href="#">Все бренды</a>
+        </div>
         <div class="brands__info">
           <ul class="brands__main-list">
             <li class="brands__main-item">
@@ -643,42 +621,75 @@
               <img class="brands__logo" src="images/brand-6.jpg" srcset="images/brand-6@2x.jpg 2x" alt="Логотип бренда BURBERRY">
             </li>
           </ul>
-          <div class="brands__slider slider">
-            <ul class="brands__others-list slider__list">
-              <li class="brands__others-item">Azzaro</li>
-              <li class="brands__others-item">Burberry</li>
-              <li class="brands__others-item">Bvlgari</li>
-              <li class="brands__others-item">Calvin Klein</li>
-              <li class="brands__others-item">Carolina</li>
-              <li class="brands__others-item">Herrera</li>
-              <li class="brands__others-item">Cartier</li>
-              <li class="brands__others-item">Christian Dior</li>
-              <li class="brands__others-item">Dana</li>
-              <li class="brands__others-item">Davidoff</li>
-              <li class="brands__others-item">Dolce & Gabbana</li>
-              <li class="brands__others-item">Elizabeth Arden</li>
-              <li class="brands__others-item">Estee Lauder</li>
-              <li class="brands__others-item">Giorgio Armani</li>
-              <li class="brands__others-item">Givenchy</li>
-              <li class="brands__others-item">Gucci</li>
-              <li class="brands__others-item">Guerlain</li>
-              <li class="brands__others-item">Hugo Boss</li>
-              <li class="brands__others-item">Issey Miyake</li>
-              <li class="brands__others-item">Ivanka Trump</li>
-              <li class="brands__others-item">Jean Paul Gaultier</li>
-              <li class="brands__others-item">Juicy Couture</li>
-              <li class="brands__others-item">Lancome</li>
-              <li class="brands__others-item">Liz Claiborne</li>
-              <li class="brands__others-item">Mont Blanc</li>
-              <li class="brands__others-item">Paco Rabanne</li>
-              <li class="brands__others-item">Parfums De Coeur</li>
-              <li class="brands__others-item">Ralph Lauren</li>
-              <li class="brands__others-item">Thierry Mugler</li>
-              <li class="brands__others-item">Versace</li>
-              <li class="brands__others-item">Yves Saint Laurant</li>
-            </ul>
-            <div class="slider__nav">
-              <div class="slider__arrows">
+          <div class="main__slider-wrapper">
+            <div class="brands__slider-wrapper">
+              <div class="brands__slider swiper-container slider">
+                <div class="brands__slider-items slider__list swiper-wrapper">
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Azzaro</li>
+                    <li class="brands__others-item">Burberry</li>
+                    <li class="brands__others-item">Bvlgari</li>
+                    <li class="brands__others-item">Calvin Klein</li>
+                    <li class="brands__others-item">Carolina Herrera</li>
+                    <li class="brands__others-item">Cartier</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Christian Dior</li>
+                    <li class="brands__others-item">Dana</li>
+                    <li class="brands__others-item">Davidoff</li>
+                    <li class="brands__others-item">Dolce & Gabbana</li>
+                    <li class="brands__others-item">Elizabeth Arden</li>
+                    <li class="brands__others-item">Estee Lauder</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Giorgio Armani</li>
+                    <li class="brands__others-item">Givenchy</li>
+                    <li class="brands__others-item">Gucci</li>
+                    <li class="brands__others-item">Guerlain</li>
+                    <li class="brands__others-item">Hugo Boss</li>
+                    <li class="brands__others-item">Issey Miyake</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Ivanka Trump</li>
+                    <li class="brands__others-item">Jean Paul Gaultier</li>
+                    <li class="brands__others-item">Juicy Couture</li>
+                    <li class="brands__others-item">Lancome</li>
+                    <li class="brands__others-item">Liz Claiborne</li>
+                    <li class="brands__others-item">Mont Blanc</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Paco Rabanne</li>
+                    <li class="brands__others-item">Parfums De Coeur</li>
+                    <li class="brands__others-item">Ralph Lauren</li>
+                    <li class="brands__others-item">Thierry Mugler</li>
+                    <li class="brands__others-item">Versace</li>
+                    <li class="brands__others-item">Yves Saint Laurant</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Azzaro</li>
+                    <li class="brands__others-item">Burberry</li>
+                    <li class="brands__others-item">Bvlgari</li>
+                    <li class="brands__others-item">Calvin Klein</li>
+                    <li class="brands__others-item">Carolina Herrera</li>
+                    <li class="brands__others-item">Cartier</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Christian Dior</li>
+                    <li class="brands__others-item">Dana</li>
+                    <li class="brands__others-item">Davidoff</li>
+                    <li class="brands__others-item">Dolce & Gabbana</li>
+                    <li class="brands__others-item">Elizabeth Arden</li>
+                    <li class="brands__others-item">Estee Lauder</li>
+                  </ul>
+                  <ul class="brands__all-list swiper-slide">
+                    <li class="brands__others-item">Giorgio Armani</li>
+                    <li class="brands__others-item">Givenchy</li>
+                    <li class="brands__others-item">Gucci</li>
+                    <li class="brands__others-item">Guerlain</li>
+                    <li class="brands__others-item">Hugo Boss</li>
+                    <li class="brands__others-item">Issey Miyake</li>
+                  </ul>
+                </div>
                 <button class="slider__button slider__button--prev button" type="button">
                   <svg class="slider__arrow-icon" width="19" height="32">
                     <use xlink:href="#icon-arrow-prev"></use>
@@ -696,10 +707,10 @@
           </div>
         </div>
       </section>
-      <div class="publications">
+      <div class="publications container">
         <h2 class="main__title publications__title">Статьи и новости</h2>
         <div class="publications__wrapper">
-          <section class="articles">
+          <section class="publications__articles articles">
             <h3 class="visually-hidden">Статьи</h3>
             <div class="publications__item articles__item">
               <h4 class="publications__item-title articles__item-title">Парфюмерия в нашей жизни</h4>
@@ -715,163 +726,184 @@
                 Как ароматы могут влиять на ваше настроение, самочувствие, деловые отношения и любовные завоевания? Все секреты магической силы различных парфюмов, вы, сможете открыть для себя, прочитав эту статью!
               </p>
             </div>
-            <div class="publications__item articles__item">
-              <h4 class="publications__item-title articles__item-title">Победители парфюмерных премий Art and Olfaction Awards 2014 и Canadian Fragrance Awards 2014</h4>
+            <div class="publications__item articles__item" style="padding-top: 33px">
+              <h4 class="publications__item-title articles__item-title" style="margin-bottom: 12px">Победители парфюмерных премий Art and Olfaction Awards 2014 и Canadian Fragrance Awards 2014</h4>
               <time class="publications__date articles__date" datetime="2017-04-26">26 апреля 2017</time>
               <p class="publications__item-description articles__item-description">
                 В Канаде прошло награждения победителей девятой ежегодной премии ароматов &laquo;Canadian Fragrance Awards 2014&raquo;.
               </p>
             </div>
-            <a class="publications__link-more articles__link-more" href="#">Смотреть все статьи</a>
+            <div class="publications__link-wrapper articles__link-wrapper">
+              <a class="publications__link-more articles__link-more" href="#">Смотреть все статьи</a>
+            </div>
           </section>
-          <section class="news">
+
+          <section class="publications__news news">
             <h3 class="visually-hidden">Новости</h3>
             <div class="publications__item news__item news__item--right">
-              <h4 class="publications__item-title news__item-title">Geza Shoen, Mark Buxton и Bertrand Duchaufour</h4>
               <div class="news__image-wrapper">
                 <img class="news__image" src="images/news-1.jpg" srcset="images/news-1@2x.jpg 2x" alt="Фотография к новости">
               </div>
-              <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
-              <p class="publications__item-description news__item-description">
-                Три поистине великих парфюмера, объединили свои общие труды и выпустили коллекция под названием Renegades.
-              </p>
+              <div class="news__info">
+                <h4 class="publications__item-title news__item-title" style="margin-bottom: 18px">Geza Shoen, Mark Buxton и Bertrand Duchaufour</h4>
+                <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
+                <p class="publications__item-description news__item-description">
+                  Три поистине великих парфюмера, объединили свои общие труды и выпустили коллекция под названием Renegades.
+                </p>
+              </div>
             </div>
             <div class="publications__item news__item">
-              <h4 class="publications__item-title news__item-title">No Ordinary Man от Korloff Paris</h4>
               <div class="news__image-wrapper">
                 <img class="news__image" src="images/news-2.jpg" srcset="images/news-2@2x.jpg 2x" alt="Фотография к новости">
               </div>
-              <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
-              <p class="publications__item-description news__item-description">
-                Мужской аромат выпущенный в 2016 году воплощает силу духа и отвагу
-              </p>
+              <div class="news__info">
+                <h4 class="publications__item-title news__item-title">No Ordinary Man от Korloff Paris</h4>
+                <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
+                <p class="publications__item-description news__item-description">
+                  Мужской аромат выпущенный в 2016 году воплощает силу духа и отвагу
+                </p>
+              </div>
             </div>
             <div class="publications__item news__item news__item--right">
-              <h4 class="publications__item-title news__item-title">Новый аромат представляет собой</h4>
               <div class="news__image-wrapper">
                 <img class="news__image" src="images/news-3.jpg" srcset="images/news-3@2x.jpg 2x" alt="Фотография к новости">
               </div>
-              <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
-              <p class="publications__item-description news__item-description">
-                Новинка 2016 года для мужчин от торгового дома Amouage &ndash; Bracken for Men. обладателя.
-              </p>
+              <div class="news__info">
+                <h4 class="publications__item-title news__item-title">Новый аромат представляет собой</h4>
+                <time class="publications__date news__date" datetime="2017-04-26">26 апреля 2017</time>
+                <p class="publications__item-description news__item-description">
+                  Новинка 2016 года для мужчин от торгового дома Amouage &ndash; Bracken for Men. обладателя.
+                </p>
+              </div>
             </div>
-            <a class="publications__link-more articles__link-more" href="#">Смотреть все новости</a>
+            <div class="publications__link-wrapper news__link-wrapper">
+              <a class="publications__link-more news__link-more" href="#">Смотреть все новости</a>
+            </div>
           </section>
         </div>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="footer__top">
-        <div class="footer__menu">
-          <h2 class="footer__menu-title">О компании</h2>
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">О магазине</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Оплата</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Доставка</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Новости</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Статьи</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Контакты</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="footer__menu-link" href="#">Информация о заказах</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__menu footer__menu--catalog">
-          <h2 class="footer__menu-title"></h2>
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Женская парфюмерия</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Мужская парфюмерия</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Новинки</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Средства ухода</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Селективная косметика</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Духи для дома</a>
-            </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="#">Винтаж</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__contacts">
-          <a class="footer__tel" href="tel:+74955420595">+7&nbsp;&#47;495&#47;&nbsp;542&#150;05&#150;95</a>
-          <div class="footer__messengers">
-            <p class="footer__contacts-type">Мы доступны также:</p>
-            <div class="footer__messenger-wrapper">
-              <svg class="footer__messenger-icon" width="26" height="26">
-                <use xlink:href="#icon-whatsapp"></use>
-              </svg>
-              <span class="visually-hidden">WhatsApp</span>
-            </div>
-            <div class="footer__messenger-wrapper">
-              <svg class="footer__messenger-icon" width="19" height="20">
-                <use xlink:href="#icon-viber"></use>
-              </svg>
-              <span class="visually-hidden">Viber</span>
-            </div>
+      <div class="footer__top container">
+        <div class="footer__columns">
+          <div class="footer__menu footer__col">
+            <h2 class="footer__menu-title">О компании</h2>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">О магазине</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Оплата</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Доставка</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Новости</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Статьи</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Контакты</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Информация о заказах</a>
+              </li>
+            </ul>
           </div>
-          <p class="footer__contacts-type">В рабочее время c 9.00 до 21.00</p>
-          <ul class="footer__contacts-links">
-            <li class="footer__link-item footer__link-item--callback">
-              <a class="footer__contacts-link" href="#">Обратный звонок</a>
-            </li>
-            <li class="footer__link-item footer__link-item--email">
-              <a class="footer__contacts-link" href="mailto:info@lenoma.ru">info@lenoma.ru</a>
-            </li>
-            <li class="footer__link-item footer__link-item--skype">
-              <a class="footer__contacts-link footer__contacts-link" href="skype:lenoma.ru">skype: lenoma.ru</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__subscription subscription">
-          <b class="subscription__text">Подписаться на новости</b>
-          <form class="subscription__form" action="#" method="post">
-            <input class="subscription__input" name="subscription" id="footer-subscription">
-            <label class="subscription__label" for="footer-subscription">Введите email</label>
-            <button class="subscription__submit button" type="submit">Подписаться</button>
-          </form>
-          <div class="subscription__social">
-            <div class="footer__messenger-wrapper">
-              <svg class="footer__messenger-icon" width="26" height="26">
-                <use xlink:href="#icon-instagram"></use>
-              </svg>
-              <span class="visually-hidden">Instagram</span>
+          <div class="footer__menu footer__menu--catalog footer__col">
+            <h2 class="footer__menu-title">Каталог</h2>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Женская парфюмерия</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Мужская парфюмерия</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Новинки</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Средства ухода</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Селективная косметика</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Духи для дома</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Винтаж</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts footer__col">
+            <a class="footer__tel" href="tel:+74955420595">+7&nbsp;&#47;495&#47;&nbsp;542-05-95</a>
+            <div class="footer__messengers">
+              <p class="footer__contacts-type">Мы доступны также:</p>
+              <div class="footer__messenger-wrapper">
+                <svg class="footer__messenger-icon footer__messenger-icon--whatsapp" width="26" height="26">
+                  <use xlink:href="#icon-whatsapp"></use>
+                </svg>
+                <span class="visually-hidden">WhatsApp</span>
+              </div>
+              <div class="footer__messenger-wrapper">
+                <svg class="footer__messenger-icon footer__messenger-icon--viber" width="19" height="20">
+                  <use xlink:href="#icon-viber"></use>
+                </svg>
+                <span class="visually-hidden">Viber</span>
+              </div>
             </div>
-            <a class="subscription__social-link" href="#">Присоединяйтесь к нам</a>
+            <p class="footer__contacts-type">В рабочее время c 9.00 до 21.00</p>
+            <ul class="footer__contacts-links">
+              <li class="footer__link-item footer__link-item--callback">
+                <a class="footer__contacts-link" href="#">Обратный звонок</a>
+              </li>
+              <li class="footer__link-item footer__link-item--email">
+                <a class="footer__contacts-link" href="mailto:info@lenoma.ru">info@lenoma.ru</a>
+              </li>
+              <li class="footer__link-item footer__link-item--skype">
+                <a class="footer__contacts-link footer__contacts-link" href="skype:lenoma.ru">skype: lenoma.ru</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__subscription footer__col subscription">
+            <b class="subscription__text">Подписаться на новости</b>
+            <form class="subscription__form form" action="#" method="post">
+              <div class="subscription__field-wrapper">
+                <input class="subscription__input form__input" name="subscription" id="footer-subscription">
+                <label class="subscription__label form__label" for="footer-subscription">Введите email</label>
+              </div>
+              <div class="subscription__button-wrapper">
+                <button class="subscription__submit button" type="submit">Подписаться</button>
+              </div>
+            </form>
+            <div class="subscription__social">
+              <div class="footer__social-icon-wrapper">
+                <svg class="footer__social-icon" width="26" height="26">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+                <span class="visually-hidden">Instagram</span>
+              </div>
+              <a class="subscription__social-link" href="#">Присоединяйтесь к нам</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">
-          &copy; 2017. Lenoma.ru
-        </p>
-        <p class="footer__development">
-          Разработка и поддержка &mdash; &laquo;ЭВРИКА&raquo;
-        </p>
+      <div class="footer__bottom container">
+        <div class="footer__bottom-columns">
+          <p class="footer__copyright">
+            &copy; 2017. Lenoma.ru
+          </p>
+          <p class="footer__development">
+            Разработка и поддержка &mdash; &laquo;ЭВРИКА&raquo;
+          </p>
       </div>
     </footer>
+
+    <script src="libs/swiper/swiper.min.js"></script>
+    <script src="scripts/scripts.min.js"></script>
   </body>
 </html>

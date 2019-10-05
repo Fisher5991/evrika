@@ -1,0 +1,16 @@
+.form__input {
+  padding: 5px 30px 5px 5px;
+  font: inherit;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+
+  &:focus + .form__label,
+  &--filled + .form__label {
+    top: -18px;
+  }
+}
+
+.form__label {
+  transition: top 0.3s;
+}

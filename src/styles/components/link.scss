@@ -1,11 +1,15 @@
-.link {
-  &--counter {
-    font-size: 10px;
-    font-weight: 700;
-    line-height: calc(24 / 10);
-    letter-spacing: calc(25 / 1000);
-    color: white;
-    border-radius: 50%;
-    background-color: $brown;
-  }
+.link__counter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: (24 / 10);
+  letter-spacing: (25 / 1000) + em;
+  color: white;
+  border-radius: 50%;
+  background-color: $brown;
 }

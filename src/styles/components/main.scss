@@ -1,8 +1,49 @@
 .main__title {
-  margin-top: 0;
-  margin-bottom: 0;
+  width: 100%;
+  max-width: 419px;
+  margin: 0 auto;
+  padding-right: 45px;
+  padding-bottom: 17px;
+  padding-left: 45px;
   font-weight: 700;
   font-size: 36px;
-  letter-spacing: calc(25 / 1000);
-  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: (25 / 1000) + em;
+  text-align: center;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  border-bottom: 2px solid $brown;
+
+  &--special-offers {
+    padding-bottom: 25px;
+  }
+}
+
+.main__slider-wrapper {
+  position: relative;
+}
+
+.main__slider {
+  margin-top: 71px;
+  margin-right: 1px;
+}
+
+.main__bestsellers {
+  position: relative;
+  margin-bottom: 81px;
+}
+
+.main__novelty {
+  position: relative;
+  margin-bottom: 85px;
+}
+
+.main__special-offers {
+  position: relative;
+  margin-bottom: 71px;
+}
+
+.main__brands {
+  position: relative;
+  margin-bottom: 125px;
 }

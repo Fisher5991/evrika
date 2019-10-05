@@ -1,17 +1,54 @@
+.brands__main-list {
+  @include list-reset;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  margin-bottom: 18px;
+  margin-left: -19px;
+}
+
+.brands__main-item {
+  margin-left: 19px;
+}
+
+.brands__link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .brands__all-link {
+  display: block;
+  margin-top: 24px;
   font-weight: 700;
-  line-height: calc(24 / 14);
-  letter-spacing: calc(100 / 1000);
+  line-height: (24 / 14);
+  letter-spacing: (100 / 1000) + em;
   color: $brown;
+  text-align: center;
+  text-transform: lowercase;
+  font-variant: small-caps;
 
   &:hover,
   &:focus {
-    color: $brown;
+    color: $light-brown;
+    text-decoration: underline;
   }
 }
 
+.brands__slider-wrapper {
+  margin-right: 119px;
+  margin-left: 119px;
+}
+
+.brands__all-list {
+  @include list-reset;
+  width: 200px;
+}
+
 .brands__others-item {
+  margin-top: 17px;
   font-size: 16px;
-  line-height: calc(36 / 16);
-  letter-spacing: calc(25 / 1000);
+  line-height: (19 / 16);
+  letter-spacing: (25 / 1000) + em;
 }

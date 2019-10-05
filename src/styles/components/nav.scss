@@ -1,14 +1,50 @@
 .nav__list {
   @include list-reset;
+
+  &--menu {
+    margin-left: -52px;
+    padding-top: 8px;
+
+    .nav__item {
+      margin-left: 52px;
+    }
+  }
+
+  &--user {
+    .nav__item {
+      margin-bottom: 0;
+      padding-top: 9px;
+      padding-bottom: 7px;
+      padding-right: 44px;
+      padding-left: 41px;
+      border-left: 1px solid $gray-border;
+    }
+
+    .nav__item--favorites {
+      padding-right: 15px;
+      padding-left: 42px;
+    }
+  }
+}
+
+.nav__item {
+  margin-bottom: 8px;
 }
 
 .nav__link {
+  position: relative;
   font-size: 13px;
-  line-height: calc(24 / 13);
-  letter-spacing: calc(25 / 1000);
+  line-height: (24 / 13);
+  letter-spacing: (25 / 1000) + em;
 
   &:hover,
   &:focus {
     color: $brown;
   }
+}
+
+.nav__link-counter {
+  top: -5px;
+  right: -13px;
+  padding-top: 3px;
 }
